@@ -1,0 +1,155 @@
+// main: ../main.scss
+/*--------------------------------------------------------------
+# Call To Action 3 Section
+--------------------------------------------------------------*/
+.call-to-action-3 {
+  position: relative;
+  padding: 100px 0;
+  isolation: isolate;
+
+  // Container styling
+  .container {
+    position: relative;
+  }
+
+  // Typography styling
+  h2 {
+    color: var(--heading-color);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+  }
+
+  .lead {
+    color: color-mix(in srgb, var(--default-color), transparent 20%);
+    font-size: 1.25rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  // Button styling
+  .btn {
+    padding: 12px 32px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+
+  .btn-primary {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: var(--contrast-color);
+
+    &:hover {
+      background-color: color-mix(in srgb, var(--accent-color), transparent 10%);
+      border-color: color-mix(in srgb, var(--accent-color), transparent 10%);
+      box-shadow: 0 5px 15px color-mix(in srgb, var(--accent-color), transparent 70%);
+    }
+  }
+
+  .btn-outline-primary {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+
+    &:hover {
+      background-color: var(--accent-color);
+      color: var(--contrast-color);
+      box-shadow: 0 5px 15px color-mix(in srgb, var(--accent-color), transparent 70%);
+    }
+  }
+
+  // Scribble decorations
+  .scribble {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0.1;
+    animation: float 6s ease-in-out infinite;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background-color: var(--accent-color);
+    }
+  }
+
+  .scribble-1 {
+    width: 150px;
+    height: 150px;
+    top: -30px;
+    left: 5%;
+    animation-delay: 0s;
+
+    &::before {
+      clip-path: path('M75,0 C90,25 110,25 125,50 C140,75 160,75 150,100 C140,125 110,125 75,150 C40,125 10,125 0,100 C-10,75 10,75 25,50 C40,25 60,25 75,0');
+    }
+  }
+
+  .scribble-2 {
+    width: 120px;
+    height: 120px;
+    top: 20%;
+    right: 10%;
+    animation-delay: -2s;
+
+    &::before {
+      clip-path: path('M60,0 C80,20 100,20 100,40 C100,60 80,80 60,120 C40,80 20,60 20,40 C20,20 40,20 60,0');
+    }
+  }
+
+  .scribble-3 {
+    width: 100px;
+    height: 100px;
+    bottom: -20px;
+    left: 15%;
+    animation-delay: -4s;
+
+    &::before {
+      clip-path: path('M50,0 C70,15 85,15 90,35 C95,55 85,70 50,100 C15,70 5,55 10,35 C15,15 30,15 50,0');
+    }
+  }
+
+  // Floating animation
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0) rotate(0);
+    }
+
+    50% {
+      transform: translateY(-20px) rotate(5deg);
+    }
+  }
+
+  // Responsive adjustments
+  @media (max-width: 768px) {
+    padding: 60px 0;
+
+    h2 {
+      font-size: 2.5rem;
+    }
+
+    .lead {
+      font-size: 1.1rem;
+    }
+
+    .cta-buttons {
+      .btn {
+        display: block;
+        width: 100%;
+        margin: 10px 0;
+      }
+    }
+
+    .scribble {
+      transform: scale(0.7);
+    }
+  }
+}
